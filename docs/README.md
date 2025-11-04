@@ -559,10 +559,6 @@ Este sistema é ideal para:
 - **Sistemas bancários** - Compliance e auditoria
 - **Plataformas de dados** - ETL com monitoramento
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 106d08da753cd780da377cf2fe79919fbd525c23
 
 
 
