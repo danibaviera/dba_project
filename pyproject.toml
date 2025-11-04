@@ -1,0 +1,15 @@
+[project]
+name = "dba_project"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Danieli",email = "danii_baviera@hotmail.com"},
+]
+dependencies = ["fastapi>=0.120.1", "uvicorn>=0.38.0", "pydantic>=2.12.3", "python-dotenv>=1.2.1", "psutil>=7.1.2", "httpx>=0.28.1", "APScheduler>=3.11.0", "prometheus-client>=0.23.1", "bcrypt>=5.0.0", "python-jose>=3.5.0", "sqlalchemy>=2.0.44", "motor>=3.3.0", "pymongo>=4.6.0"]
+requires-python = "==3.9.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

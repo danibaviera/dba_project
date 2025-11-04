@@ -1,0 +1,45 @@
+# 🧩 MonitorDB API Requirements
+
+# Framework Web e ASGI
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Banco de dados
+motor>=3.3.0           # Driver MongoDB assíncrono
+pymongo>=4.6.0         # Driver MongoDB (dependência do motor)
+
+# Validação e configuração  
+pydantic>=2.4.0        # Validação de dados v2
+email-validator        # Validação de email para EmailStr
+python-dotenv>=1.0.0   # Variáveis de ambiente
+
+# Monitoramento e observabilidade
+psutil>=5.9.0          # Métricas do sistema
+prometheus_client>=0.19.0  # Cliente Prometheus
+httpx>=0.25.0          # Cliente HTTP assíncrono
+
+# Utilitários e Segurança
+python-multipart>=0.0.6    # Upload de arquivos
+python-jose[cryptography]>=3.3.0  # JWT tokens
+passlib[bcrypt]>=1.7.4     # Hash de senhas
+bcrypt>=4.0.0              # Hashing de senhas
+cryptography>=41.0.0       # Criptografia
+APScheduler>=3.10.0        # Agendamento de tarefas
+
+# Integrações e Notificações
+email-validator>=2.0.0     # Validação de email
+aiosmtplib>=3.0.0          # SMTP assíncrono
+redis>=5.0.0               # Cache e filas (opcional)
+celery>=5.3.0              # Tarefas em background (opcional)
+
+# Desenvolvimento e testes
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0          # Formatação de código
+flake8>=6.0.0          # Linting
+mypy>=1.5.0            # Type checking
+
+# Opcional - Para desenvolvimento local
+watchdog>=3.0.0        # Auto-reload de arquivos
+rich>=13.0.0           # Output colorido no terminal

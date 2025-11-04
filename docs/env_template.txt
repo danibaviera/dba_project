@@ -1,0 +1,71 @@
+# Configurações do MongoDB
+MONGO_URI=mongodb://localhost:27017
+MONGO_DB=monitor_db
+
+# Configurações JWT
+JWT_SECRET=your-super-secret-jwt-key-change-in-production-please
+JWT_ALGORITHM=HS256
+JWT_ACCESS_TOKEN_EXPIRE_MINUTES=30
+JWT_REFRESH_TOKEN_EXPIRE_DAYS=7
+
+# Configurações de Segurança
+PASSWORD_MIN_LENGTH=8
+PASSWORD_MAX_LENGTH=128
+MAX_LOGIN_ATTEMPTS=5
+ACCOUNT_LOCKOUT_MINUTES=30
+
+# Configurações SMTP para Email
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASSWORD=your-app-password
+ALERT_EMAIL=admin@monitordb.com
+
+# Notificações Slack (opcional)
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+
+# Notificações Telegram (opcional)
+TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+TELEGRAM_CHAT_ID=your-telegram-chat-id
+
+# Notificações WhatsApp Business API (opcional)
+WHATSAPP_API_URL=https://graph.facebook.com/v17.0/YOUR_PHONE_NUMBER_ID/messages
+WHATSAPP_API_TOKEN=your-whatsapp-api-token
+WHATSAPP_DEFAULT_RECIPIENT=5511999999999
+
+# Webhook genérico (opcional)
+DEFAULT_WEBHOOK_URL=https://your-webhook-url.com/alerts
+
+# Redis (opcional - para cache e filas)
+REDIS_URL=redis://localhost:6379
+
+# Configurações de Ambiente
+ENVIRONMENT=development
+DEBUG=true
+
+# Configurações de API
+API_TITLE=MonitorDB API
+API_VERSION=1.0.0
+API_DESCRIPTION=Sistema de monitoramento e gestão de dados de clientes
+
+# Rate Limiting
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_PERIOD=60
+
+# Timeouts para integrações externas
+HTTP_TIMEOUT=30.0
+VIACEP_TIMEOUT=10.0
+BANK_API_TIMEOUT=15.0
+
+# Configurações de Prometheus
+PROMETHEUS_METRICS_PORT=8001
+PROMETHEUS_METRICS_PATH=/metrics
+
+# Configurações do Grafana
+GRAFANA_URL=http://localhost:3000
+GRAFANA_API_KEY=your-grafana-api-key
+
+# Configurações de Observabilidade
+ENABLE_METRICS_EXPORT=true
+ENABLE_ALERTING=true
+METRICS_RETENTION_DAYS=30

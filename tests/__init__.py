@@ -1,0 +1,1 @@
+# Pasta de testes básicos do MonitorDB

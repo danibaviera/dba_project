@@ -1,0 +1,33 @@
+# Instruções para configurar MongoDB com autenticação
+
+# PASSO 1: Localizar MongoDB
+# Procurar em um destes locais:
+# - C:\Program Files\MongoDB\Server\7.0\bin
+# - C:\Program Files\MongoDB\Server\6.0\bin  
+# - C:\Program Files\MongoDB\Server\5.0\bin
+
+# PASSO 2: Abrir PowerShell como ADMINISTRADOR
+
+# PASSO 3: Navegar até a pasta bin do MongoDB
+# cd "C:\Program Files\MongoDB\Server\7.0\bin"
+
+# PASSO 4: Conectar ao MongoDB
+# .\mongosh.exe
+# ou se não funcionar:
+# .\mongo.exe
+
+# PASSO 5: No shell do MongoDB, executar estes comandos:
+use admin
+db.createUser({
+  user: "admin", 
+  pwd: "admin123", 
+  roles: ["root"]
+})
+exit
+
+# PASSO 6: Testar nova conexão
+# .\mongosh.exe -u admin -p admin123 --authenticationDatabase admin
+
+# PASSO 7: Se funcionar, atualizar .env:
+# MONGO_URI=mongodb://admin:admin123@localhost:27017/monitor_db?authSource=admin
+# MONGO_DB=monitor_db

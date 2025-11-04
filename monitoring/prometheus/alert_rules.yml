@@ -1,0 +1,34 @@
+groups:
+  - name: monitordb_basic_alerts
+    rules:
+      # API health alerts
+      - alert: APIDown
+        expr: up{job="monitordb-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: api
+        annotations:
+          summary: "MonitorDB API está offline"
+          description: "A API MonitorDB não está respondendo há mais de 1 minuto"
+
+      - alert: HighAPIErrorRate
+        expr: rate(http_requests_total{status_code=~"5.."}[5m]) > 0.1
+        for: 3m
+        labels:
+          severity: warning
+          service: api
+        annotations:
+          summary: "Alta taxa de erros na API"
+          description: "Taxa de erros HTTP 5xx está acima de 10% nos últimos 5 minutos"
+
+      # Prometheus health
+      - alert: PrometheusDown
+        expr: up{job="prometheus"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: monitoring
+        annotations:
+          summary: "Prometheus está offline"
+          description: "Prometheus não está coletando métricas"
