@@ -130,11 +130,11 @@ docker run -d \
   --name mongodb \
   -p 27017:27017 \
   -e MONGO_INITDB_ROOT_USERNAME=admin \
-  -e MONGO_INITDB_ROOT_PASSWORD=password \
+  -e MONGO_INITDB_ROOT_PASSWORD=<your-password> \
   mongo:latest
 
 # Ajustar .env
-MONGO_URI=mongodb://admin:password@localhost:27017
+MONGO_URI=mongodb://admin:<your-password>@localhost:27017
 ```
 
 #### Opção C: MongoDB Atlas (Cloud)
@@ -143,7 +143,7 @@ MONGO_URI=mongodb://admin:password@localhost:27017
 3. Obter string de conexão
 4. Configurar no .env:
    ```
-   MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/monitor_db
+   MONGO_URI=mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database-name>
    ```
 
 ## Opção 3: Docker Compose - Stack Completa (Recomendada para Produção)
